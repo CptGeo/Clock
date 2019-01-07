@@ -1,115 +1,151 @@
-* {
-  padding:0;
-  margin:0;
-  box-sizing: border-box;
+*{
+	box-sizing:border-box;
+	margin:0;
+	padding:0;
+	cursor:default;
+}
+html{
+	height:100%;
+	background-color: rgb(102, 204, 250);
+	background-image: url("./imgs/background.jpg");
+	background-repeat:no-repeat;
+	background-size:cover;
+	overflow:hidden;
+}
+button{
+	display:block;
+	width:300px;
+	font-size:3em;
+	text-align: center;
+	margin:50px auto 0 auto;
+	border-radius:10px;
+	padding:10px 20px;
+	border:none;
+	box-shadow: 0 0 3px black;
+	transition: all linear 40ms;
+	cursor:pointer;
+}
+button:hover{
+	box-shadow: 0 0 4px black;
+	transform:scale(1.1);
+}
+button:active{
+	border:none;
+	transform:scale(1);
+}
+button:focus{
+	outline:0;
+}
+#show-clock{
+	margin-top:300px;
+	transition:all linear 300ms;
 }
 
-body,html{
-  height:100%;
-
-}
-a{
-  text-decoration: none;
-  color:rgba(25,25,25,1);
-}
-a,p,h1,h5{
-  font-family: 'Nunito Sans', sans-serif;
-}
-.background{
-  height:100%;
-  background:url("./img/lake.jpg");
-  background-repeat:no-repeat;
-  background-position: center;
-  background-size:cover;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
+.invisible{
+	visibility:hidden;
+	opacity:0.2;
+	transition: all linear 500ms;
+	display:none;
 }
 
-
-.text {
-  text-align: center;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  height:100%;
-  flex-wrap:wrap;
-  flex-direction: column;
+#clock{
+	position:relative;
+	width:500px;
+	height:500px;
+	margin:20px auto 0 auto;
+	border-radius:50%;
+	border:1px solid rgb(200,200,200);
+	transform:rotate(-90deg) translateY(-3px);
+	box-shadow: 0px 0 25px black;
+	transition: all linear 200ms;
+}
+.hand{
+	position:absolute;
+	height:3px;
+	border-radius:15px;
+	top:50%;
+	left:50%;
+	box-shadow: 0 0 15px black;
+	transform-origin:0%;
+	transition: all cubic-bezier(0, 1.74, 0, 1.49) 80ms;
+	transform:rotate(0deg);
+	background-color:rgb(255,204,0);
 }
 
-.text h1{
-  color:rgba(230,230,230,1);
-  font-family: 'Montserrat', sans-serif;
-  margin-bottom:30px;
-  position: relative;
-  font-size: 2.1em;
+#hours-pointer{
+	width:100px;
 }
-.text span{
-  color:rgba(51, 210, 60,0.9);
+#minutes-pointer{
+	width:170px;
 }
-.text h5{
-  transition:all 100ms linear;
+#seconds-pointer{
+	width:210px;
+	height:1px;
+	background-color:rgb(255,26,26);
 }
-.text a{
-  padding:20px 40px;
-  color:rgba(250,250,250,1);
-  background-color:rgba(255, 72, 0,0.85);
-  font-family:'Nunito Sans', sans-serif;
-  text-transform: uppercase;
-  border-radius:35px;
-  transition:all 100ms linear;
-  font-size: 1em;
-  border:0px solid rgba(255, 72, 0,0.1) ;
+#hours-pointer::after{
+	content:url("./imgs/pointer.svg");
+	position:absolute;
+	top:-11px;
+	right:-8px;
+	height:25px;
+	width:25px;
 }
 
-.text a:hover{
-  border-width:5px;
+#minutes-pointer::after{
+	content:url("./imgs/pointer.svg");
+	position:absolute;
+	top:-13px;
+	right:-8px;
+	height:29px;
+	width:29px;
 }
 
-.text h5{
-    position:relative;
-    padding:0 5px;
-
+/*Standard CSS to center an absolute element in a relative environment is:
+	width:40px;
+	height:40px;
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin-top:-20px ---half of the height;
+	margin-left:-20px --- half of the width;
+*/
+#facebook img{
+	transform:rotate(90deg);
+	opacity:0.9;
+	width:40px;
+	height:40px;
+	position:absolute;
+	top:50%;
+	margin-top:-20px;
+	left:50%;
+	margin-left:-20px;
+	transition:all linear 200ms;
+	cursor:pointer;
 }
-.text h5::before{
-  content:"";
-  width:100%;
-  height:1px;
-  background-color:rgba(25,25,25,1);
-  position:absolute;
-  transform:scaleX(0.1);
-  visibility: hidden;
-  bottom:-3px;
-  right:0;
-  left:0;
-  margin:0 auto;
-  transition:all 200ms ease-in-out;
+#facebook img:hover{
+	transform:rotate(450deg);
+	width:50px;
+	height:50px;
+	margin-top:-25px;
+	margin-left:-25px;
+	opacity:1;
 }
 
-.text a:hover h5::before{
-  transform:scaleX(1);
-  visibility: visible;
-  background-color:rgba(250,250,250,1);
-
+footer{
+	position:relative;
+	text-align: right;
+	margin-top:50px;
+	margin-right:10px;
+}
+footer a{
+	color:black;
+	cursor:pointer;
 }
 
-.foot{
-  text-align: right;
-  width:100%;
-  padding:3px 0;
-}
-.foot span{
-  display:inline-block;
-  width:10px;
-  height:10px;
-  background:url("./img/like.png");
-  background-size:cover;
-  background-repeat: no-repeat;
-
-}
-.foot p,a{
-  color:rgba(25,25,25,0.9);
-  font-size:13px;
+footer img{
+	width:15px;
+	height:15px;
+	display:inline-block;
+	top:3px;
 }

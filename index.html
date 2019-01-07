@@ -1,22 +1,21 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat|Nunito+Sans" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <meta charset="utf-8">
-    <title>Landing Page - George Kalyvianakis</title>
-  </head>
-  <body>
-
-    <div class="background">
-      <div class="text">
-        <h1>Travel. Experience. Enjoy. It's your <span>life</span>.</h1>
-        <a href="#"><h5>Find out more</h5></a>
-      </div>
-      <div class="foot">
-        <p>Created with <span></span> by <a href="https://www.facebook.com/george.kalyvianakis"> Giorgos Kalyvianakis</a></p>
-      </div>
-    </div>
-
-  </body>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>3. Javascript Clock</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<button onclick="makeVisible()" id="show-clock">Click!</button>
+	<div class="invisible" id="clock">
+		<div class="hand" id="hours-pointer"></div>
+		<div class="hand" id="minutes-pointer"></div>
+		<div class="hand" id="seconds-pointer"></div>
+		<a target="_blank" id="facebook"href="https://www.facebook.com/george.kalyvianakis"><img src="./imgs/facebook.svg"></a>
+	</div>
+	<audio id="tick" src="./sounds/tick.wav"></audio>
+	<button onclick="makeInvisible()" class="invisible" id="hide-clock">Hide</button>
+	<footer class="invisible">Made with <img src="./imgs/heart.svg" id="love"></img> by <a target="_blank" href="https://www.facebook.com/george.kalyvianakis">George Kalyvianakis</a></footer>
+</body>
+<script type="text/javascript" src="script.js"></script>
 </html>

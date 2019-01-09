@@ -7,7 +7,7 @@ var clock = document.getElementById("clock");
 var clickBtn = document.querySelector("button");
 var hideBtn = document.querySelector("#hide-clock");
 var foot = document.querySelector("footer");
-sound.volume=0.2;
+sound.volume=0.1;
 setInterval(displayTime,1000);
 
 function displayTime(){

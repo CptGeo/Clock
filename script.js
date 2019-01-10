@@ -9,7 +9,12 @@ var clock = document.getElementById("clock");
 var clickBtn = document.querySelector("button");
 var hideBtn = document.querySelector("#hide-clock");
 var foot = document.querySelector("footer");
+<<<<<<< HEAD
 //END-------------------------------------------------------------------------------------------------------------------
+=======
+sound.volume=0.1;
+setInterval(displayTime,1000);
+>>>>>>> a4114af534ca7259a6aeb28bd8edae07cb68b47f
 
 sound.volume=0.2; //setting the volume of the 'tick.wav' sound to 20%
 
@@ -113,4 +118,7 @@ function makeInvisible(){
 		clickBtn.style.marginTop="300px";
 	},100)
 }
+<<<<<<< HEAD
 //END-------------------------------------------------------------------------------------------------------------------
+=======
+>>>>>>> a4114af534ca7259a6aeb28bd8edae07cb68b47f
